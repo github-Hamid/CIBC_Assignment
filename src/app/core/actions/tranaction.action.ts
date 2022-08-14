@@ -1,4 +1,3 @@
-import Transaction from 'src/app/models/transaction';
 import { createAction, props } from '@ngrx/store';
 
 export const getAllTransactions = createAction('[Transactions] Get list');
