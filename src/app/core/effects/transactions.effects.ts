@@ -1,7 +1,6 @@
 import {
   getAllTransactions,
   getTransactionListSuccess,
-  // getDetailedTransaction,
 } from '../actions/tranaction.action';
 import { Actions, createEffect, ofType } from '@ngrx/effects';
 import { Injectable } from '@angular/core';
