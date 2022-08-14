@@ -1,0 +1,53 @@
+input[type='text']
+{
+  border: none;
+}
+
+input[type='text']:focus
+{
+  outline: none;
+}
+
+
+.hidden{
+  display: none;
+}
+
+.visible{
+  display: block;
+}
+
+.row-comment{
+  position: relative;
+}
+
+#saveBtnContainer{
+  position: absolute;
+  left: 80%;
+  bottom: 6%;
+}
+
+#comment-input{
+  width: 100%;
+}
+
+@media screen and (max-width: 900px) and (min-width: 700px) {
+  #saveBtnContainer{
+    left: 70%;
+    bottom: 6%;
+  }
+}
+
+@media screen and (max-width: 700px) and (min-width: 400px) {
+  #saveBtnContainer{
+    bottom: 6%;
+    left: 60%;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  #saveBtnContainer{
+    top: 100%;
+    left: 0%
+  }
+}

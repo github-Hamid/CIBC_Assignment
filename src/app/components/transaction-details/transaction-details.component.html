@@ -1,0 +1,17 @@
+<div *ngIf="this.transaction">
+  <div class="detailed-transaction-container">
+    <div class="header">
+      <h3>Transaction</h3>
+      <div (click)="backBtnClicked()" class="header-div-btn">
+        <span class="material-symbols-outlined"> arrow_back_ios </span>
+        <span>Back to List</span>
+      </div>
+    </div>
+
+    <app-table
+      [data]="transaction"
+      [type]="'detailed'"
+      (commentChangedEventEmitter)="commentChangeHandler($event)"
+    ></app-table>
+  </div>
+</div>

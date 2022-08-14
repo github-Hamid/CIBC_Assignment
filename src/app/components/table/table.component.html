@@ -1,0 +1,77 @@
+<div [ngSwitch]="this.type">
+  <div *ngSwitchCase="'list'">
+    <div *ngIf="this.data">
+      <form>
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th scope="col">ID</th>
+              <th scope="col">Date</th>
+              <th scope="col">Comments</th>
+              <th scope="col">Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let transaction of data; index as i">
+              <td>{{ transaction.id }}</td>
+              <td>{{ transaction.date }}</td>
+              <td>{{ transaction.comment }}</td>
+              <td>
+                <a [routerLink]="['/transaction-details', transaction.id]"
+                  >View</a
+                >
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </form>
+    </div>
+  </div>
+
+  <div *ngSwitchCase="'detailed'">
+    <form>
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th scope="col">Field Name</th>
+            <th scope="col">Requirements</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>ID</td>
+            <td><input type="text" [value]="data.id" readonly /></td>
+          </tr>
+          <tr>
+            <td>Date</td>
+            <td><input type="text" [value]="data.date" readonly /></td>
+          </tr>
+          <tr>
+            <td class="row-comment">
+              <div>Comments</div>
+              <span [id]="'saveBtnContainer'" [ngClass]="'hidden'">
+                <button
+                  type="button"
+                  class="btn btn-primary"
+                  (click)="saveButtonClicked()"
+                >
+                  Save
+                </button>
+              </span>
+            </td>
+            <td>
+              <input
+                [id]="'comment-input'"
+                type="text"
+                name="comment"
+                [(ngModel)]="data.comment"
+                (ngModelChange)="commentChanged($event)"
+                onkeydown="return /[a-z]/i.test(event.key)"
+              />
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </form>
+  </div>
+</div>

@@ -1,0 +1,6 @@
+<div *ngIf="this.status === 'loading'; else notLoading">
+  <app-loading></app-loading>
+</div>
+<ng-template #notLoading>
+  <router-outlet></router-outlet>
+</ng-template>
