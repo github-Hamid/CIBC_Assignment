@@ -9,9 +9,9 @@ function requireHTTPS(req, res, next) {
 const express = require('express');
 const app = express();
  app.use(requireHTTPS);
-app.use(express.static('./dist/cibc-assignment'));
+app.use(express.static('./dist/assignment-cibc'));
 app.get('/*', function(req, res) {
-  res.sendFile('index.html', {root: 'dist/cibc-assignment/'}
+  res.sendFile('index.html', {root: 'dist/assignment-cibc/'}
 );
 });
 
